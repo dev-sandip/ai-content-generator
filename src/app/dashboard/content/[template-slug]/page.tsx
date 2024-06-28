@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import { NextPage } from "next";
 import FormSection from "../_components/FormSection";
 import OutputSection from "../_components/OutputSection";
 import { TEMPLATE } from "@/types";
@@ -12,9 +13,8 @@ interface PROPS {
   params: {
     "template-slug": string;
   };
-  slug: string;
 }
-const CreateNewContent = (props: PROPS) => {
+const CreateNewContent: NextPage<PROPS> = (props) => {
   const selectedTemplate: TEMPLATE | undefined = templates.find(
     (item) => item.slug === props.params["template-slug"]
   );
