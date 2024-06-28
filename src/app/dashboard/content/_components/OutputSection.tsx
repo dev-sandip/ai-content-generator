@@ -3,8 +3,17 @@ import "@toast-ui/editor/dist/toastui-editor.css";
 import { Editor } from "@toast-ui/react-editor";
 import { Button } from "@/components/ui/button";
 import { Copy } from "lucide-react";
-const OutputSection = () => {
+interface PROPS {
+  aiOutput: string;
+}
+const OutputSection = ({ aiOutput }: PROPS) => {
   const editorRef = React.useRef<any>(null);
+  React.useEffect(() => {
+    if (editorRef.current) {
+      const editorInstance = editorRef.current.getInstance();
+      editorInstance.setMarkdown(aiOutput);
+    }
+  }, [aiOutput]);
   return (
     <div className="bg-white shadow-lg border rounded-lg">
       <div className="flex items-center justify-between p-5">
