@@ -10,13 +10,13 @@ const templates = [
     slug: "generate-blog-title",
     form: [
       {
-        label: "Enter your blog niche",
+        label: "Enter your blog niche.",
         field: "input",
         name: "niche",
         required: true,
       },
       {
-        label: "Enter blog outline",
+        label: "Enter blog outline.",
         field: "textarea",
         name: "outline",
         required: true,
@@ -35,13 +35,13 @@ const templates = [
     slug: "generate-blog-content",
     form: [
       {
-        label: "Enter your blog topic",
+        label: "Enter your blog topic.",
         field: "input",
         name: "topic",
         required: true,
       },
       {
-        label: "Enter blog outline",
+        label: "Enter blog outline.",
         field: "textarea",
         name: "outline",
         required: true,
@@ -60,7 +60,7 @@ const templates = [
     slug: "generate-blog-topic-ideas",
     form: [
       {
-        label: "Enter your blog niche",
+        label: "Enter your blog niche.",
         field: "input",
         name: "niche",
         required: true,
@@ -79,7 +79,7 @@ const templates = [
     slug: "generate-youtube-seo-title",
     form: [
       {
-        label: "Enter video description",
+        label: "Enter video description.",
         field: "textarea",
         name: "description",
         required: true,
@@ -98,7 +98,7 @@ const templates = [
     slug: "generate-youtube-tags",
     form: [
       {
-        label: "Enter video description",
+        label: "Enter video description.",
         field: "textarea",
         name: "description",
         required: true,
@@ -117,7 +117,7 @@ const templates = [
     slug: "rewrite-article",
     form: [
       {
-        label: "Enter article text",
+        label: "Enter article text.",
         field: "textarea",
         name: "article",
         required: true,
@@ -136,7 +136,7 @@ const templates = [
     slug: "improve-text",
     form: [
       {
-        label: "Enter text",
+        label: "Enter text.",
         field: "textarea",
         name: "text",
         required: true,
@@ -155,7 +155,7 @@ const templates = [
     slug: "add-emojis-to-text",
     form: [
       {
-        label: "Enter text",
+        label: "Enter text.",
         field: "textarea",
         name: "text",
         required: true,
@@ -174,7 +174,7 @@ const templates = [
     slug: "generate-instagram-post",
     form: [
       {
-        label: "Enter post topic",
+        label: "Enter post topic.",
         field: "input",
         name: "topic",
         required: true,
@@ -193,7 +193,7 @@ const templates = [
     slug: "generate-instagram-tags",
     form: [
       {
-        label: "Enter post content",
+        label: "Enter post content.",
         field: "textarea",
         name: "content",
         required: true,
@@ -212,7 +212,7 @@ const templates = [
     slug: "generate-instagram-post-idea",
     form: [
       {
-        label: "Enter your niche",
+        label: "Enter your niche.",
         field: "input",
         name: "niche",
         required: true,
@@ -231,7 +231,7 @@ const templates = [
     slug: "check-english-grammar",
     form: [
       {
-        label: "Enter text",
+        label: "Enter text.",
         field: "textarea",
         name: "text",
         required: true,
@@ -250,13 +250,13 @@ const templates = [
     slug: "write-code",
     form: [
       {
-        label: "Enter requirements",
+        label: "Enter requirements.",
         field: "textarea",
         name: "requirements",
         required: true,
       },
       {
-        label: "Enter programming language",
+        label: "Enter programming language.",
         field: "input",
         name: "language",
         required: true,
@@ -275,7 +275,7 @@ const templates = [
     slug: "explain-code",
     form: [
       {
-        label: "Enter code",
+        label: "Enter code.",
         field: "textarea",
         name: "code",
         required: true,
@@ -294,7 +294,7 @@ const templates = [
     slug: "detect-code-bugs",
     form: [
       {
-        label: "Enter code",
+        label: "Enter code.",
         field: "textarea",
         name: "code",
         required: true,
@@ -313,7 +313,7 @@ const templates = [
     slug: "generate-tagline",
     form: [
       {
-        label: "Enter product/service description",
+        label: "Enter product/service description.",
         field: "textarea",
         name: "description",
         required: true,
@@ -332,7 +332,7 @@ const templates = [
     slug: "generate-product-description",
     form: [
       {
-        label: "Enter product details",
+        label: "Enter product details.",
         field: "textarea",
         name: "details",
         required: true,
