@@ -3,6 +3,7 @@ import Image from "next/image";
 import React from "react";
 import { FileClock, Home, Settings, WalletCards } from "lucide-react";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 const SideNav = () => {
   const path = usePathname();
@@ -37,15 +38,16 @@ const SideNav = () => {
       <hr className="my-6 border" />
       <div className="mt-3">
         {MenuList.map((menu, index) => (
-          <div
-            key={index}
-            className={`flex gap-2 mb-2 p-3 hover:bg-primary hover:text-white rounded-lg items-center ${
-              path === menu.path && "bg-primary text-white"
-            }`}
-          >
-            <menu.icon className="h-6 w-6" />
-            <h2 className="text-lg">{menu.name}</h2>
-          </div>
+          <Link key={index} href={menu.path} >
+            <div
+              key={index}
+              className={`flex gap-2 mb-2 p-3 hover:bg-primary hover:text-white rounded-lg items-center ${path === menu.path && "bg-primary text-white"
+                }`}
+            >
+              <menu.icon className="h-6 w-6" />
+              <h2 className="text-lg">{menu.name}</h2>
+            </div>
+          </Link>
         ))}
       </div>
     </div>

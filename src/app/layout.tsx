@@ -3,6 +3,7 @@ import { Outfit } from "next/font/google";
 import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
 const outfit = Outfit({ subsets: ["latin"] });
+import { Toaster } from "react-hot-toast"
 
 export const metadata: Metadata = {
   title: "ContentCraft || Craft your content effortlessly.",
@@ -18,7 +19,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <ClerkProvider>
-        <body className={outfit.className}>{children}</body>
+        <body className={outfit.className}>
+          <Toaster
+            position="top-right"
+            reverseOrder={false}
+          />
+          {children}
+        </body>
       </ClerkProvider>
     </html>
   );
