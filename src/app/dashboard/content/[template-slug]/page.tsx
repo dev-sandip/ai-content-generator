@@ -9,6 +9,10 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
 import chatSession from "@/utils/AIModel";
+import { db } from "@/utils/db";
+import { AIOutput } from "@/utils/schema";
+import { useUser } from "@clerk/nextjs";
+import moment from "moment";
 interface PROPS {
   params: {
     "template-slug": string;
@@ -20,14 +24,25 @@ const CreateNewContent: NextPage<PROPS> = (props) => {
   );
   const [loading, setloading] = React.useState(false);
   const [aiOutput, setaiOutput] = React.useState<string>("");
+  const { user } = useUser();
   const GenerateAIContent = async (formData: any) => {
     setloading(true);
     const selectedPrompt = selectedTemplate?.aiPrompt;
     const finalAiPrompt = JSON.stringify(formData) + "," + selectedPrompt;
     const result = await chatSession.sendMessage(finalAiPrompt);
     setaiOutput(result.response.text());
+    await SaveInDB(formData, selectedTemplate?.slug, result.response.text())
     setloading(false);
   };
+  const SaveInDB = async (formData: any, slug: any, aiOutput: string) => {
+    const result = await db.insert(AIOutput).values({
+      formData: formData,
+      templateSlug: slug,
+      aiResponse: aiOutput,
+      createdBy: user?.primaryEmailAddress?.emailAddress,
+      createdAt: moment().format("DD/MM/YYYY")
+    })
+  }
   return (
     <div className="p-10">
       <Link href="/dashboard">
